@@ -458,8 +458,21 @@
   @media (max-width:700px){.foot-grid{grid-template-columns:1fr}.foot-nav{justify-content:flex-start}}
   .level .stage{transform:rotate(.6deg)}
   .level.flip .stage{transform:rotate(-.6deg)}
+  /* Lab 7: fruit sugar vs factory sugar */
+  .sgs{animation:sgs 6s linear infinite;opacity:0}
+  @keyframes sgs{0%{transform:translateX(0);opacity:0}8%{opacity:1}85%{transform:translateX(196px);opacity:1}92%,100%{transform:translateX(204px);opacity:0}}
+  .sgf{animation:sgf 3s ease-in infinite;opacity:0}
+  @keyframes sgf{0%{transform:translateX(0);opacity:0}6%{opacity:1}50%{transform:translateX(196px);opacity:1}56%,100%{transform:translateX(204px);opacity:0}}
+  .fatdot{transform-box:fill-box;transform-origin:center;animation:fatdot 6s ease-in-out infinite;opacity:0}
+  @keyframes fatdot{0%,15%{opacity:0;transform:scale(.4)}45%,85%{opacity:1;transform:scale(1)}100%{opacity:0;transform:scale(.4)}}
+  .sugwrap{overflow-x:auto;margin:6px 0 12px}
+  .sugtab{width:100%;min-width:0;border-collapse:collapse;font-size:14px;line-height:1.4}
+  .sugtab th,.sugtab td{text-align:left;padding:8px;border-bottom:1px solid var(--line);vertical-align:top}
+  .sugtab td b{color:var(--accent);display:inline}
+  @media (max-width:560px){.sugtab thead{display:none}.sugtab,.sugtab tbody,.sugtab tr,.sugtab td{display:block}.sugtab tr{padding:8px 0;border-bottom:1px solid var(--line)}.sugtab td{border:0;padding:2px 0}.sugtab td:first-child{font-weight:700}.sugtab td:nth-child(2)::before{content:"Sugar: ";color:var(--muted)}.sugtab td:nth-child(3)::before{content:"Comes with: ";color:var(--muted)}}
   @media (prefers-reduced-motion:reduce){
     *,*::before,*::after{animation:none!important}
+    .sgs,.sgf,.fatdot{opacity:1}
     .bagfly,.cbub,.youbub,.spark,.drop,.fdrop,.na-out,.k-in,.flowin,.glu,.o2,.atp-out,.sp1,.sp2,.folate,.shieldout{opacity:1}
     .draw{stroke-dashoffset:0}.lbl-b{opacity:0}.dmg{opacity:0}
   }
@@ -1148,6 +1161,95 @@
           </g>
         </svg>
         <div class="stage-cap">Unlock → run to DNA → build armor.</div>
+      </div>
+    </section>
+
+    <!-- LAB 7: fruit sugar vs factory sugar -->
+    <section class="level lab wrap" id="lab-sugar">
+      <div class="copy">
+        <p class="tag">Lab 7 · <b>Fruit sugar vs factory sugar</b></p>
+        <h2>Fructose isn't the enemy. <em>The factory is.</em></h2>
+        <p class="kid">Fruit sugar is mostly <b>fructose and glucose</b>. Factory sugar is too. The difference is the <b>package</b>. Fruit sends a small dose locked in fiber and water, with vitamins riding along. Soda and candy strip all that out and <b>dump a flood</b> on your liver at once.</p>
+        <details class="more-d">
+          <summary>Read more</summary>
+          <div class="more">
+            <h4>The molecules</h4>
+            <p><b>Glucose</b> is the fuel every cell in your body can burn. It raises blood sugar and calls in insulin.</p>
+            <p><b>Fructose</b> is the sweetest sugar. It's handled mainly by your <b>gut and liver</b>, and it barely moves blood sugar on its own.</p>
+            <p><b>Sucrose</b> (table sugar, from cane or beets) is one glucose bonded to one fructose. Your gut snaps it in half, so it ends up 50/50. <b>High-fructose corn syrup</b> is about 55% fructose and 42% glucose.</p>
+            <h4>What's actually in each one</h4>
+            <div class="sugwrap">
+              <table class="sugtab">
+                <thead><tr><th>Source</th><th>Sugar inside</th><th>Comes with</th></tr></thead>
+                <tbody>
+                  <tr><td>Medium apple</td><td>About 19 g, mostly fructose</td><td><b>4+ g fiber</b>, water, vitamin C, polyphenols</td></tr>
+                  <tr><td>Banana</td><td>About 14 g, roughly even fructose, glucose and sucrose</td><td><b>3 g fiber</b>, 422 mg potassium, B6</td></tr>
+                  <tr><td>20 oz soda</td><td>About 65 g of corn syrup or sugar</td><td>Nothing. <b>0 fiber.</b></td></tr>
+                  <tr><td>Table sugar (cane or beet)</td><td>Pure sucrose: 50% fructose, 50% glucose</td><td>Nothing. Refined out.</td></tr>
+                  <tr><td>Honey</td><td>About 40% fructose, 30% glucose</td><td>Trace enzymes and minerals, no fiber</td></tr>
+                  <tr><td>Agave syrup</td><td>Often 70%+ fructose</td><td>No fiber. Sold as "natural" but heavily processed.</td></tr>
+                </tbody>
+              </table>
+            </div>
+            <h4>Why the package changes everything</h4>
+            <p><b>Speed.</b> In whole fruit, sugar is locked inside plant cell walls. You have to chew, and your gut has to break the fiber down, so sugar leaks in slowly. An apple sits around 36 on the glycemic index. Pure glucose is 100.</p>
+            <p><b>Dose.</b> Your small intestine can process a modest amount of fructose itself, turning it into glucose and other fuels before it ever reaches the liver. A slow, fruit-sized dose mostly stays in that lane. A big fast dose overflows it, and the extra hits the liver.</p>
+            <p><b>The liver overload.</b> In the liver, fructose skips one of the main brakes on sugar burning (an enzyme step called phosphofructokinase). When too much shows up at once, the liver turns the overflow into fat. Over years, that's linked to fatty liver, belly fat and insulin resistance.</p>
+            <p><b>The bonus crew.</b> Fruit adds fiber, potassium, vitamin C and polyphenols, and some of these slow sugar absorption even more. Factory sugar adds nothing but calories.</p>
+            <h4>What the big studies show</h4>
+            <p>A study following more than 187,000 people found that eating more whole fruit, especially blueberries, grapes and apples, was linked with a <b>lower</b> risk of type 2 diabetes. Drinking more fruit juice was linked with a <b>higher</b> risk. It's the same sugar, but without the package.</p>
+            <h4>Straight talk</h4>
+            <p class="straight">A fructose molecule from an apple is chemically identical to one from cane sugar. Your body can't tell them apart. What it <b>can</b> tell is how much arrives and how fast. A spoon of cane sugar won't poison you. The problem is a diet built on refined sugar with no fiber, dumped in all day. Juice and dried fruit sit in the middle, so eat whole fruit first. If you're diabetic, whole fruit is still generally recommended, but check with your doctor.</p>
+            <p class="src">Sources: <a href="https://www.bmj.com/content/347/bmj.f5001" target="_blank" rel="noopener">Muraki et al., BMJ, 2013</a> · <a href="https://collaborate.princeton.edu/en/publications/the-small-intestine-converts-dietary-fructose-into-glucose-and-or/" target="_blank" rel="noopener">Jang et al., Cell Metabolism, 2018</a> · <a href="https://fdc.nal.usda.gov/" target="_blank" rel="noopener">USDA FoodData Central</a></p>
+          </div>
+        </details>
+      </div>
+      <div class="stage" aria-label="Animation: on top, a whole fruit wrapped in fiber releases sugar slowly to a calm green liver. On the bottom, a soda floods sugar into the liver, which fills with yellow fat droplets.">
+        <svg viewBox="0 0 360 240" role="img">
+          <defs><clipPath id="fibclip"><circle cx="52" cy="66" r="26"/></clipPath></defs>
+          <rect width="360" height="240" rx="14" fill="#06170d"/>
+          <line x1="16" y1="120" x2="344" y2="120" stroke="#1f5134" stroke-width="2" stroke-dasharray="4 5"/>
+          <!-- top lane: whole fruit -->
+          <circle cx="52" cy="66" r="26" fill="#ff4a3d"/>
+          <path d="M52 40 q2 -10 10 -12" stroke="#3fbf5f" stroke-width="3" fill="none" stroke-linecap="round"/>
+          <g clip-path="url(#fibclip)" stroke="#b8f2c8" stroke-width="1.6" opacity=".55">
+            <path d="M20 46 l64 64 M20 62 l64 64 M20 30 l64 64 M36 30 l64 64 M84 46 l-64 64 M84 62 l-64 64 M84 30 l-64 64 M68 30 l-64 64"/>
+          </g>
+          <g fill="#ff5c8a">
+            <path class="sgs" style="animation-delay:0s" d="M86 60 l5.2 3 v6 l-5.2 3 -5.2 -3 v-6z"/>
+            <path class="sgs" style="animation-delay:3s" d="M86 60 l5.2 3 v6 l-5.2 3 -5.2 -3 v-6z"/>
+          </g>
+          <path d="M284 50 q30 -14 58 0 q6 22 -18 32 q-28 8 -40 -8 z" fill="#3fbf5f"/>
+          <!-- bottom lane: soda -->
+          <path d="M36 146 h34 l-5 54 h-24 z" fill="#10301c" stroke="#ff4a3d" stroke-width="3"/>
+          <rect x="38" y="164" width="30" height="12" fill="#ff4a3d"/>
+          <path d="M58 146 l6 -8" stroke="#b8f2c8" stroke-width="3" stroke-linecap="round"/>
+          <g fill="#ff5c8a">
+            <path class="sgf" style="animation-delay:0s" d="M86 166 l5.2 3 v6 l-5.2 3 -5.2 -3 v-6z"/>
+            <path class="sgf" style="animation-delay:.25s" d="M86 178 l5.2 3 v6 l-5.2 3 -5.2 -3 v-6z"/>
+            <path class="sgf" style="animation-delay:.5s" d="M86 158 l5.2 3 v6 l-5.2 3 -5.2 -3 v-6z"/>
+            <path class="sgf" style="animation-delay:.75s" d="M86 172 l5.2 3 v6 l-5.2 3 -5.2 -3 v-6z"/>
+            <path class="sgf" style="animation-delay:1s" d="M86 162 l5.2 3 v6 l-5.2 3 -5.2 -3 v-6z"/>
+            <path class="sgf" style="animation-delay:1.25s" d="M86 184 l5.2 3 v6 l-5.2 3 -5.2 -3 v-6z"/>
+          </g>
+          <path d="M284 156 q30 -14 58 0 q6 22 -18 32 q-28 8 -40 -8 z" fill="#3a6b2a"/>
+          <g fill="#ffb13b">
+            <circle class="fatdot" style="animation-delay:.4s" cx="298" cy="164" r="4"/>
+            <circle class="fatdot" style="animation-delay:.8s" cx="312" cy="172" r="5"/>
+            <circle class="fatdot" style="animation-delay:1.2s" cx="326" cy="162" r="4"/>
+            <circle class="fatdot" style="animation-delay:1.6s" cx="306" cy="182" r="3.5"/>
+            <circle class="fatdot" style="animation-delay:2s" cx="332" cy="174" r="3.5"/>
+          </g>
+          <g font-family="Patrick Hand, cursive" font-size="9" font-weight="600" letter-spacing="1">
+            <text x="20" y="24" fill="#8ef05a">WHOLE FRUIT</text>
+            <text x="20" y="108" fill="#b8f2c8">FIBER CAGE · SLOW DRIP</text>
+            <text x="340" y="100" text-anchor="end" fill="#8ef05a">LIVER: HANDLED</text>
+            <text x="80" y="138" fill="#ff4a3d">SODA / CANDY</text>
+            <text x="20" y="220" fill="#ff5c8a">NO FIBER · FLOOD</text>
+            <text x="340" y="208" text-anchor="end" fill="#ffb13b">LIVER: OVERFLOW → FAT</text>
+          </g>
+        </svg>
+        <div class="stage-cap">Same molecule. Different package.</div>
       </div>
     </section>
 
